@@ -16,7 +16,7 @@ activating docker machine oracle-dev
 ```
 ### View current activate docker machine `dmcur`( alias for `smyle_docker_machine_current`)
 ```shell
-➜ dmc
+➜ dmcur
    name: oracle-dev
      ip: 10.211.55.12
     cpu: 1
