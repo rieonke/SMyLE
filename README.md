@@ -8,13 +8,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/rieonke/SMyLE/master/insta
 
 # Usage
 ## Docker
-### Auto env docker machine `dmae` (alias for `smyle_docker_machine_auto_env`)
+### Activate first running and healthy docker machine `dmae` (alias for `smyle_docker_machine_auto_env`)
 ```shell
 #eval $(docker-machine env first-running-and-healthy-docker-machine)
 ➜ dmae
 activating docker machine oracle-dev
 ```
-### View current activate docker machine `dmcur`( alias for `smyle_docker_machine_current`)
+### View active docker machine `dmcur`( alias for `smyle_docker_machine_current`)
 ```shell
 ➜ dmcur
    name: oracle-dev
@@ -25,7 +25,7 @@ activating docker machine oracle-dev
   swarm: false
 ```
 
-### Select current docker machine `dmse` (alias for `smyle_docker_machine_select_env`)
+### Switch docker machine `dmse` (alias for `smyle_docker_machine_select_env`)
 ```shell
 ➜  dmse
 1) oracle-dev  2) prl-dev
