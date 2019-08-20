@@ -49,19 +49,24 @@ smyle_docker_machine_select_env() {
 }
 
 smyle_docker_machine_current() {
-    inspect_json=$(docker-machine inspect $DOCKER_MACHINE_NAME)
 
-    echo "   name: "$DOCKER_MACHINE_NAME
-    echo "     ip: "$(echo $inspect_json | jq -r ".Driver.IPAddress")
-    echo "    cpu: "$(echo $inspect_json | jq -r ".Driver.CPU")
-    echo "    mem: "$(echo $inspect_json | jq -r ".Driver.Memory")
-    echo " dirver: "$(echo $inspect_json | jq -r ".DriverName")
-    echo "  swarm: "$(echo $inspect_json | jq -r ".HostOptions.SwarmOptions.IsSwarm")
+    if [ ! $DOCKER_MACHINE_NAME = "" ]
+    then
+        inspect_json=$(docker-machine inspect $DOCKER_MACHINE_NAME)
+        echo "   name: "$DOCKER_MACHINE_NAME
+        echo "     ip: "$(echo $inspect_json | jq -r ".Driver.IPAddress")
+        echo "    cpu: "$(echo $inspect_json | jq -r ".Driver.CPU")
+        echo "    mem: "$(echo $inspect_json | jq -r ".Driver.Memory")"M"
+        echo " dirver: "$(echo $inspect_json | jq -r ".DriverName")
+        echo "  swarm: "$(echo $inspect_json | jq -r ".HostOptions.SwarmOptions.IsSwarm")
+    else
+        echo "no active docker machine, run dmae first"
+    fi
 }
 
 smyle_docker_alias() {
     alias dmae=smyle_docker_machine_auto_env
-    alias dmc=smyle_docker_machine_current
+    alias dmcur=smyle_docker_machine_current
     alias dmse=smyle_docker_machine_select_env
 }
 
