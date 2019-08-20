@@ -65,3 +65,8 @@ smyle_docker_alias() {
     alias dmse=smyle_docker_machine_select_env
 }
 
+if [ $SMYLE_USE_ALIAS -eq 1 ]
+then
+    smyle_docker_alias
+fi
+
