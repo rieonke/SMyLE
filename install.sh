@@ -55,3 +55,5 @@ then
     fi
 fi
 
+echo "[SMyLE] Done."
+
