@@ -3,3 +3,6 @@
 
 SMYLE_HOME=$(dirname $0)
 source $SMYLE_HOME/docker.sh
+
+# update myself
+(git pull -q origin master > /dev/null 2>&1 &)
